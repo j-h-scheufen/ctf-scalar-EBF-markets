@@ -2,5 +2,21 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/contracts/"
+]
+# Exclude CTF contracts from compilation
+exclude = ["lib/conditional-tokens-contracts/**"]
+solc_version = "0.8.24" # For our scripts
+optimizer = true
+optimizer_runs = 200
+
+# RPC configuration
+[rpc_endpoints]
+gnosis = "https://rpc.gnosischain.com"
+local = "http://localhost:8545" # anvil default port
+
+# Default to local anvil instance
+eth_rpc_url = "http://localhost:8545"
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
